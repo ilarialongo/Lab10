@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -102,6 +103,7 @@ public class Simulator {
 		switch (e.getType()) {
 		case ARRIVO_CLIENTE:
 			if (num_tavoli_disponibili>0) {
+				Collections.sort(tavoli);
 				
 				for (Tavolo t: this.tavoli) {
 					/*if (t.getNum_Posti()==num_Persone && t.isIs_Libero()==true) {
